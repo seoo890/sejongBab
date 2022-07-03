@@ -1,0 +1,150 @@
+{% extends 'layout.html' %}
+
+{% block style %}
+<style>
+    @font-face {
+        src: url("../fonts/BMJUA_otf.otf");
+        font-family: "Jua";
+    }
+    * {
+        box-sizing: border-box;
+        text-align: center;
+        font-family: "Jua";
+    }
+
+    body {
+       background-color: #F0E8D9;
+    }
+
+    .notice {
+        line-height: 50px;
+        border-radius: 10px;
+        background-color: white; 
+        width: 600px; 
+        height: 50px;
+        margin: 20px auto;
+    }
+
+    .grid {
+        width: 690px;
+        height: 300px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .tdl {
+        border-radius: 10px;
+        background-color: white; 
+        width: 200px; 
+        margin: 0 auto;
+        overflow: hidden;
+        float: left;
+        margin-right: 15px;
+        margin-left: 15px;
+    }
+
+    .info {
+        padding: 5px;
+    }
+
+    h4 {
+        margin-top: 0px;
+        margin-bottom: 20px;
+        font-size: 16px;
+        color: #58595b;
+    }
+
+    .conv_lists
+    {
+        text-align: center;
+        
+    }
+    .conv_lists_items
+    {
+        height: 276px;
+        text-align: center;
+        display: inline-block;
+        margin-bottom: 30px;
+    }
+    
+</style>
+{% endblock %}
+
+{% block content %}
+    <h1>EMart24</h1>
+
+    <div>
+        학교에 무려 2개나 있는 편의점 브랜드!
+    </div>
+
+    <div style="text-align: center; margin-top: 20px;">
+        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d790.7844605117093!2d127.07349672733936!3d37.55181607980064!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x357ca4d04ef3d389%3A0x322585c169b1b2bf!2z7ISc7Jq47Yq567OE7IucIOq1sOyekOuPmSDshLjsooXrjIDtlZnqtZAg7Jyo6rOh6rSA!5e0!3m2!1sko!2skr!4v1654498033389!5m2!1sko!2skr" width="400" height="250" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d790.8024920787424!2d127.07292423474895!3d37.55011661235408!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x357ca4daa73c863f%3A0xd6bd626e0463b230!2z7IS47KKF64yA7ZWZ6rWQIOq0keqwnO2GoOq0gA!5e0!3m2!1sko!2skr!4v1654498066096!5m2!1sko!2skr" width="400" height="250" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+    </div>
+
+    <p>
+        - 위치 : <br>
+        율곡관 지하 1층 <br>
+        광개토관 지하 1층
+    </p>
+
+    <p>-영업시간 : <br> 
+        매일 : 00:00~24:00
+    </p>
+    <div>
+        알림, 공지
+        <div class="notice">
+            포켓몬빵 입고시간 AM 10:00~AM 11:00
+        </div>
+    </div>
+
+    <h3>
+        <대표 음식>
+    </h3>
+
+    <div class="conv_lists">
+        <ul style="list-style: none;
+        margin-left: auto;
+        margin-right: auto;
+        padding-left: 0;">
+            <li class="conv_lists_items"><div class="tdl">
+                <img src="/imgs/store/emart24/1" onerror="this.src='/imgs/errer/300x200'" class="image" width="200px" height="200px">
+                <div class="info">
+                    <h4>
+                        컵라면류
+                    </h4>
+                    <span>850~3000원</span>
+                </div>
+            </div></li>
+            <li class="conv_lists_items"><div class="tdl">
+                <img src="/imgs/store/emart24/2" onerror="this.src='/imgs/errer/300x200'" class="image" width="200px" height="200px">
+                <div class="info">
+                    <h4>
+                        삼각김밥류
+                    </h4>
+                    <span>1000~1700원</span>
+                </div>
+            </div></li>
+            <li class="conv_lists_items"><div class="tdl">
+                <img src="/imgs/store/emart24/3" onerror="this.src='/imgs/errer/300x200'" class="image" width="200px" height="200px">
+                <div class="info">
+                    <h4>
+                        샌드위치류
+                    </h4>
+                    <span>2000~3000원</span>
+                </div>
+            </div></li>
+        </ul>
+    </div>
+    
+
+    
+
+
+{% endblock %}
+
+{% block script %}
+<script src="">
+    
+</script>
+{% endblock %}

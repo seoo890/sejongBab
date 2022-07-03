@@ -1,0 +1,41 @@
+{% extends 'layout.html' %}
+{% block style %}
+<style>
+    h3{
+      margin-top: 0px;
+      margin-bottom: 20px;
+      font-size: 32px;
+      color: #58595b;
+  }
+
+  .button{
+      margin: 0px;
+      text-decoration: none;
+      color:black;
+      font-size: 16px;
+  }
+</style>
+{% endblock %}
+{% block content %}
+        <h1 class="" style="text-align: center;">학식</h1>
+        <div id="container">
+            <div class="tdl">
+                <img src="/imgs/haksik/hak" onerror="this.src='/imgs/errer/300x200'" class="image" width="300px" height="200px">
+                <div class="info">
+                  <h3>
+                      학생회관
+                  </h3>
+                  <a href="haksik/hak" class="button"> GO </a>
+                </div>
+              </div>
+              <div class="tdl">
+                <img src="/imgs/haksik/jin" onerror="this.src='/imgs/errer/300x200'" class="image" width="300px" height="200px">
+                <div class="info">
+                  <h3>
+                      진관홀
+                  </h3>
+                  <a href="haksik/jin" class="button"> GO </a>
+                </div>
+              </div>
+        </div>
+{% endblock %}

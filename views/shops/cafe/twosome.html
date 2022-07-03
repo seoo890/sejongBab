@@ -1,0 +1,168 @@
+{% extends 'layout.html' %}
+
+{% block style %}
+<style>
+    * {
+        box-sizing: border-box;
+        text-align: center;
+        font-family: "Jua";
+    }
+
+    body {
+       background-color: #F0E8D9;
+    }
+
+    .notice {
+        border-radius: 10px;
+        background-color: white; 
+        width: 600px; 
+        height: 50px;
+        line-height: 50px;
+        margin: 20px auto;
+    }
+
+    .grid {
+        width: 690px;
+        height: 300px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .tdl {
+        border-radius: 10px;
+        background-color: white; 
+        width: 200px; 
+        margin: 0 auto;
+        margin-bottom: 50px;
+        overflow: hidden;
+        float: left;
+        margin-right: 15px;
+        margin-left: 15px;
+    }
+
+    .info {
+        padding: 5px;
+    }
+
+    h4 {
+        margin-top: 0px;
+        margin-bottom: 20px;
+        font-size: 16px;
+        color: #58595b;
+    }
+
+    .conv_lists
+    {
+        text-align: center;
+        
+    }
+    .conv_lists_items
+    {
+        height: 276px;
+        text-align: center;
+        display: inline-block;
+        margin-bottom: 30px;
+    }
+    
+</style>
+{% endblock %}
+
+{% block content %}
+    <h1>투썸플레이스 세종대점</h1>
+
+    <div>
+        학교 내에 있는 가장 큰 카페!
+    </div>
+
+    <div style="text-align: center; margin-top: 20px;">
+        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d790.7921750065693!2d127.07475735656078!3d37.55108900000001!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x357ca582a0bac379%3A0x448155e6788fee52!2z7Yis7I247ZSM66CI7J207IqkIOyEuOyiheuMgO2Vmeq1kOygkA!5e0!3m2!1sko!2skr!4v1654446209691!5m2!1sko!2skr" width="400" height="250" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+    </div>
+
+    <p>
+        - 위치 : 대양AI센터 1층
+    </p>
+
+    <p>-영업시간 : <br> 
+        매일 : 08:00~22:00
+    </p>
+    <div>
+        TIP
+        <div class="notice">
+            항상 사람들이 많으니 콘센트가 필요하다면 아침 일찍
+        </div>
+    </div>
+
+    <h3>
+        <커피 가격>
+    </h3>
+
+    <div class="grid" style="width: 460px;">
+        <div class="tdl">
+            <img src="/imgs/cafe/twosome/1" onerror="this.src='/imgs/errer/300x200'" class="image" width="200px" height="200px">
+            <div class="info">
+                <h4>
+                    아메리카노
+                </h4>
+                <span>4100원</span>
+            </div>
+        </div>
+
+        <div class="tdl">
+            <img src="/imgs/cafe/twosome/2" onerror="this.src='/imgs/errer/300x200'" class="image" width="200px" height="200px">
+            <div class="info">
+                <h4>
+                    카페 라떼
+                </h4>
+                <span>4600원</span>
+            </div>
+        </div>
+
+    </div>
+
+    <h3>
+        추천 사이드 메뉴
+    </h3>
+
+    <div class="conv_lists">
+        <ul style="list-style: none;
+        margin-left: auto;
+        margin-right: auto;
+        padding-left: 0;">
+            <li class="conv_lists_items"><div class="tdl">
+                <img src="/imgs/cafe/twosome/3" onerror="this.src='/imgs/errer/300x200'" class="image" width="200px" height="200px">
+                <div class="info">
+                    <h4>
+                        떠먹는 아이스박스
+                    </h4>
+                    <span>6100원</span>
+                </div>
+            </div></li>
+            <li class="conv_lists_items"><div class="tdl">
+                <img src="/imgs/cafe/twosome/4" onerror="this.src='/imgs/errer/300x200'" class="image" width="200px" height="200px">
+                <div class="info">
+                    <h4>
+                        떠먹는 티라미수
+                    </h4>
+                    <span>6100원</span>
+                </div>
+            </div></li>
+            <li class="conv_lists_items"><div class="tdl">
+                <img src="/imgs/cafe/twosome/5" onerror="this.src='/imgs/errer/300x200'" class="image" width="200px" height="200px">
+                <div class="info">
+                    <h4>
+                        떠먹는 스트로베리 초콜릿 생크림
+                    </h4>
+                    <span>6300원</span>
+                </div>
+            </div></li>
+        </ul>
+    </div>
+
+
+{% endblock %}
+
+{% block script %}
+<script src="">
+    
+</script>
+{% endblock %}

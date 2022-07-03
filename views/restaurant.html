@@ -1,0 +1,41 @@
+{% extends 'layout.html' %}
+{% block style %}
+<style>
+    h3{
+      margin-top: 0px;
+      margin-bottom: 20px;
+      font-size: 32px;
+      color: #58595b;
+  }
+
+  .button{
+      margin: 0px;
+      text-decoration: none;
+      color:black;
+      font-size: 16px;
+  }
+</style>
+{% endblock %}
+{% block content %}
+        <h1 class="" style="text-align: center;">식당</h1>
+        <div id="container">
+            <div class="tdl">
+                <img src="/imgs/restaurant/yamsem" onerror="this.src='/imgs/errer/300x200'" class="image" width="300px" height="200px">
+                <div class="info">
+                  <h3>
+                      얌샘김밥
+                  </h3>
+                  <a href="/restaurant/yamsem" class="button"> GO </a>
+                </div>
+              </div>
+              <div class="tdl">
+                <img src="/imgs/restaurant/saigong" onerror="this.src='/imgs/errer/300x200'" class="image" width="300px" height="200px">
+                <div class="info">
+                  <h3>
+                      미스사이공
+                  </h3>
+                  <a href="/restaurant/saigong" class="button"> GO </a>
+                </div>
+              </div>
+        </div>
+{% endblock %}
