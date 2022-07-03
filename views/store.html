@@ -1,0 +1,41 @@
+{% extends 'layout.html' %}
+{% block style %}
+<style>
+    h3{
+      margin-top: 0px;
+      margin-bottom: 20px;
+      font-size: 32px;
+      color: #58595b;
+  }
+
+  .button{
+      margin: 0px;
+      text-decoration: none;
+      color:black;
+      font-size: 16px;
+  }
+</style>
+{% endblock %}
+{% block content %}
+        <h1 class="" style="text-align: center;">편의점</h1>
+        <div id="container">
+            <div class="tdl">
+                <img src="/imgs/store/CU" onerror="this.src='/imgs/errer/300x200'" class="image" width="300px" height="200px">
+                <div class="info">
+                  <h3>
+                      대양 CU
+                  </h3>
+                  <a href="/store/CU" class="button"> GO </a>
+                </div>
+              </div>
+              <div class="tdl">
+                <img src="/imgs/store/emart24" onerror="this.src='/imgs/errer/300x200'" class="image" width="300px" height="200px">
+                <div class="info">
+                  <h3>
+                      이마트24
+                  </h3>
+                  <a href="/store/emart24" class="button"> GO </a>
+                </div>
+              </div>
+        </div>
+{% endblock %}

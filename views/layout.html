@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>{{title}}</title>
+        <style>
+            @font-face {
+                src: url("/imgs/font/BMJUA_otf.otf");
+                font-family: "Jua";
+            }
+            * {
+                box-sizing: border-box;
+                font-family: "Jua";
+            }
+
+            body {
+            background-color: #F0E8D9;
+            }
+            /*기본 디자인*/
+            /*네비게이션바 시작*/
+            #nav{
+                position: fixed;
+                top: 0;
+                left: 0;
+                z-index: 100;
+                background-color: black;
+                height: 100%;
+                animation-name: left;
+                animation-duration: 3s;
+            }
+            #overlay
+            {
+                position: fixed;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+                z-index: 50;
+                background-color: black;
+                opacity: 49%;
+                display: none;
+                animation-name: appear2;
+                animation-duration: 1s;
+            }
+            #nav_button{
+                position: static;
+            }
+            .open{
+                position: fixed;
+                top: 0;
+                left: 0;
+            }
+            .close{
+                position: fixed;
+                top: 0;
+                left: 200px;
+            }
+            #nav_top, #nav_top ul{
+                z-index: 100;
+                text-align: center;
+                margin:0;
+                padding:0;
+                width: 200px;
+            }
+            .nav_items{
+                display: block;
+                height: auto;
+                padding-top: 10px;
+                padding-bottom: 10px;
+                background-color: black;
+                border-bottom: 2px solid white;
+                color: white;
+            }
+            .nav_items_block
+            {
+                display: block;
+                width: 50%;
+                height: 10%;
+            }
+            .nav_dropdown{
+                display: block;
+                width: 200px;
+                height: auto;
+                padding-top: 10px;
+                padding-bottom: 10px;
+                background-color: black;
+                color: white;
+            }
+            .dropdown_link{
+                color:rgb(156, 156, 156);
+                text-decoration: none;
+            }
+            .nav_items_list{
+                display: none;
+            }
+            .nav_items,.on .nav_items_list{
+                display: block;
+            }
+            .nav_items_list_show{
+                display: block;
+            }
+            /*네비게이션바 끝*/
+            /*footer 시작*/
+            #layout_footer{
+                position: absolute;
+                width: 100%;
+                height: 100px;
+                background-color: black;
+                left: 0;
+                color: white;
+                text-align: center;
+            }
+            #developers{
+                margin-top: 40px;
+            }
+            /*footer 끝*/
+            @keyframes appear2
+            {
+            0%{opacity: 0}
+            100%{opacity: 0.5}
+            }
+            @keyframes left
+            {
+            0%{transform: translate(-200px,0);}
+            /* 25%{transform: translate(-150px,0);}
+            50%{transform: translate(-100px,0);}
+            75%{transform: translate(-50px,0);} */
+            100%{transform: translate(0,0);}
+            }
+            /*분류 페이지 컨테이너 서식 시작*/
+            .tdl {
+                border-radius: 10px;
+                background-color: white; 
+                width: 300px; 
+                margin: 0 auto;
+                margin-bottom: 50px;
+                overflow: hidden;
+                margin-right: auto;
+                margin-left: auto;
+            }
+            .info{
+                padding: 20px;
+            }
+            #container{
+                height: auto;
+            }
+            .shop_info{
+                margin-left: auto;
+                margin-right: auto;
+                margin-bottom: 20px;
+                width: 300px;
+                text-align: center;
+                background-color: white;
+            }
+            /*분류 페이지 컨테이너 서식 끝*/
+            
+        </style>
+        {% block style %}
+        {% endblock %}
+        <script>
+            window.onload=function(){
+                var isNavShow=0;
+                show_nav();
+            }
+            var isNavShow=0;
+            function show_nav(){
+                if(isNavShow==0)
+                {
+                    isNavShow=1;
+                    document.getElementById("nav_top").style.display='none';
+                    document.getElementById("overlay").style.display='none';
+                }
+                else
+                {
+                    isNavShow=0;
+                    document.getElementById("nav_top").style.display='block';
+                    document.getElementById("overlay").style.display='block';
+                }
+            }
+            function show_li(object){
+                console.log(object.getAttribute('class'));
+                if(object.getAttribute('class')=='nav_items on')
+                object.className='nav_items';
+                else
+                object.className+=' on';
+            }
+            //document.getElementById("list_down").
+        </script>
+    </head>
+    <body>
+        <div id="overlay"></div>
+        <h1 style="text-align: center;">학교에서 밥을먹자.</h1>
+        <input type="button" onclick="show_nav()" class="nav_button open" value="펼치기">
+        <div id="nav">
+            <ul id="nav_top" style="display: none;">
+                <input type="button" onclick="show_nav()" class="nav_button close" value="닫기">
+                <li class="nav_items" onclick="show_li(this)">
+                    <p>학식</p>
+                    <ul class="nav_items_list">
+                        <li class="nav_dropdown"><a href="/main/haksik/hak" class="dropdown_link">학생회관</a></li>
+                        <li class="nav_dropdown"><a href="/main/haksik/jin" class="dropdown_link">진관홀</a></li>
+                    </ul>
+                </li>
+                <li class="nav_items" onclick="show_li(this)">
+                    <p>식당</p>
+                    <ul class="nav_items_list">
+                        <li class="nav_dropdown"><a href="/main/restaurant/yamsem" class="dropdown_link">얌샘김밥</a></li>
+                        <li class="nav_dropdown"><a href="/main/restaurant/saigong" class="dropdown_link">미스사이공</a></li>
+                    </ul>
+                </li>
+                <li class="nav_items" onclick="show_li(this)">
+                    <p>카페</p>
+                    <ul class="nav_items_list">
+                        <li class="nav_dropdown"><a href="/main/cafe/pandorosi" class="dropdown_link">판도로시</a></li>
+                        <li class="nav_dropdown"><a href="/main/cafe/twosome" class="dropdown_link">투썸</a></li>
+                        <li class="nav_dropdown"><a href="/main/cafe/dic" class="dropdown_link">카페딕셔너리</a></li>
+                        <li class="nav_dropdown"><a href="/main/cafe/paris" class="dropdown_link">파리바게뜨</a></li>
+                        <li class="nav_dropdown"><a href="/main/cafe/jeju" class="dropdown_link">제주몰빵</a></li>
+                    
+                    </ul>
+                </li>
+                <li class="nav_items" onclick="show_li(this)">
+                    <p>편의점</p>
+                    <ul class="nav_items_list">
+                        <li class="nav_dropdown"><a href="/main/store/CU" class="dropdown_link">대양CU</a></li>
+                        <li class="nav_dropdown"><a href="/main/store/emart24" class="dropdown_link">이마트24</a></li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+        
+        
+        <a href="/main" style="float: right;">메인으로</a>
+        <br>
+        {% block content %}
+        {% endblock %}
+        
+        {% block script %}
+        {% endblock %}
+        <div id="layout_footer">
+            <div id="developers">개발자 - 황주영, 서대현</div>
+        </div>
+    </body>
+</html>

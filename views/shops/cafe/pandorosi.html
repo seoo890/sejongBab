@@ -1,0 +1,132 @@
+{% extends 'layout.html' %}
+
+{% block style %}
+<style>
+    @font-face {
+        src: url("../fonts/BMJUA_otf.otf");
+        font-family: "Jua";
+    }
+    * {
+        box-sizing: border-box;
+        text-align: center;
+        font-family: "Jua";
+    }
+
+    body {
+       background-color: #F0E8D9;
+    }
+
+    .notice {
+        border-radius: 10px;
+        background-color: white; 
+        width: 600px; 
+        height: 50px;
+        line-height: 50px;
+        margin: 20px auto;
+    }
+
+    .grid {
+        width: 690px;
+        height: 300px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .tdl {
+        border-radius: 10px;
+        background-color: white; 
+        width: 200px; 
+        margin: 0 auto;
+        margin-bottom: 50px;
+        overflow: hidden;
+        float: left;
+        margin-right: 15px;
+        margin-left: 15px;
+    }
+
+    .info {
+        padding: 5px;
+    }
+
+    h4 {
+        margin-top: 0px;
+        margin-bottom: 20px;
+        font-size: 16px;
+        color: #58595b;
+    }
+
+    .conv_lists
+    {
+        text-align: center;
+        
+    }
+    .conv_lists_items
+    {
+        height: 276px;
+        text-align: center;
+        display: inline-block;
+        margin-bottom: 30px;
+    }
+    
+</style>
+{% endblock %}
+
+{% block content %}
+    <h1>팬도로시 세종대점</h1>
+
+    <div>
+        학교 정문에서 가장 가까운 저렴한 카페!
+    </div>
+
+    <div style="text-align: center; margin-top: 20px;">
+        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1229.958861064056!2d127.07404430105673!3d37.549896485871685!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x357ca4da7f82fb11%3A0x52b608ac2f72d6e6!2z7ISc7Jq47Yq567OE7IucIOq1sOyekOuPmSDshLjsooXrjIDtlZnqtZAg7ZWZ7IOd7ZqM6rSA!5e0!3m2!1sko!2skr!4v1654101961182!5m2!1sko!2skr" width="400" height="250" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+    </div>
+
+    <p>
+        - 위치 : 학생회관 1층
+    </p>
+
+    <p>-영업시간 : <br> 
+        매일 : 09:30~18:30
+    </p>
+    <div>
+        TIP
+        <div class="notice">
+            1L 아메리카노의 가성비가 굉장히 좋다
+        </div>
+    </div>
+
+    <h3>
+        <커피 가격>
+    </h3>
+
+    <div class="grid" style="width: 460px;">
+        <div class="tdl">
+            <img src="/imgs/cafe/pandorosi/1" onerror="this.src='/imgs/errer/300x200'" class="image" width="200px" height="200px">
+            <div class="info">
+                <h4>
+                    아메리카노
+                </h4>
+                <span>2000원</span>
+            </div>
+        </div>
+
+        <div class="tdl">
+            <img src="/imgs/cafe/pandorosi/2" onerror="this.src='/imgs/errer/300x200'" class="image" width="200px" height="200px">
+            <div class="info">
+                <h4>
+                    1L 아메리카노
+                </h4>
+                <span>3500원</span>
+            </div>
+        </div>
+
+    </div>
+
+{% endblock %}
+
+{% block script %}
+<script src="">
+    
+</script>
+{% endblock %}

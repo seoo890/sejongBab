@@ -1,0 +1,66 @@
+{% extends 'layout.html' %}
+
+{% block style %}
+<style>
+
+    h3{
+        margin-top: 0px;
+        margin-bottom: 20px;
+        font-size: 32px;
+        color: #58595b;
+    }
+
+    .button{
+        margin: 0px;
+        text-decoration: none;
+        color:black;
+        font-size: 16px;
+    }
+</style>
+{% endblock %}
+
+{% block content %}
+    <div class="tdl">
+      <img src="/imgs/haksik" onerror="this.src='/imgs/errer/300x200'" class="image" width="300px" height="200px">
+      <div class="info">
+        <h3>
+            학식
+        </h3>
+        <a href="main/haksik" class="button"> GO </a>
+      </div>
+    </div>
+    <div class="tdl">
+      <img src="/imgs/restaurant" onerror="this.src='/imgs/errer/300x200'" class="image" width="300px" height="200px">
+      <div class="info">
+        <h3>
+            식당
+        </h3>
+        <a href="main/restaurant" class="button"> GO </a>
+      </div>
+    </div>
+    <div class="tdl">
+      <img src="/imgs/cafe" onerror="this.src='/imgs/errer/300x200'" class="image" width="300px" height="200px">
+      <div class="info">
+        <h3>
+            카페
+        </h3>
+        <a href="main/cafe" class="button"> GO </a>
+      </div>
+    </div>
+
+    <div class="tdl">
+      <img src="/imgs/store" class="image" onerror="this.src='/imgs/errer/300x200'" width="300px" height="200px">
+      <div class="info">
+        <h3>
+            편의점
+        </h3>
+        <a href="main/store" class="button"> GO </a>
+      </div>
+    </div>
+{% endblock %}
+
+{% block script %}
+<script src="">
+    
+</script>
+{% endblock %}

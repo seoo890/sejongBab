@@ -1,0 +1,81 @@
+{% extends 'layout.html' %}
+{% block style %}
+<style>
+    h3{
+      margin-top: 0px;
+      margin-bottom: 20px;
+      font-size: 32px;
+      color: #58595b;
+  }
+
+  .button{
+      margin: 0px;
+      text-decoration: none;
+      color:black;
+      font-size: 16px;
+  }
+</style>
+{% endblock %}
+{% block content %}
+<!--
+  반복문으로 구현시 틀
+  <div id="container">
+            <div class="tdl">
+                <img src="images/.jpeg" class="image" width="300px" height="200px">
+                <div class="info">
+                  <h3>
+                      식당이름
+                  </h3>
+                  <a href="/" class="button"> GO </a>
+                </div>
+              </div>
+-->
+        <h1 class="" style="text-align: center;">카페</h1>
+        <div id="container">
+            <div class="tdl">
+                <img src="/imgs/cafe/pandorosi" onerror="this.src='/imgs/errer/300x200'" class="image" width="300px" height="200px">
+                <div class="info">
+                  <h3>
+                      판도로시
+                  </h3>
+                  <a href="/cafe/pandorosi" class="button"> GO </a>
+                </div>
+              </div>
+              <div class="tdl">
+                <img src="/imgs/cafe/twosome" onerror="this.src='/imgs/errer/300x200'" class="image" width="300px" height="200px">
+                <div class="info">
+                  <h3>
+                      투썸
+                  </h3>
+                  <a href="/cafe/twosome" class="button"> GO </a>
+                </div>
+              </div>
+              <div class="tdl">
+                <img src="/imgs/cafe/dic" onerror="this.src='/imgs/errer/300x200'" class="image" width="300px" height="200px">
+                <div class="info">
+                  <h3>
+                      카페딕셔너리
+                  </h3>
+                  <a href="/cafe/dic" class="button"> GO </a>
+                </div>
+              </div>
+              <div class="tdl">
+                <img src="/imgs/cafe/paris" onerror="this.src='/imgs/errer/300x200'" class="image" width="300px" height="200px">
+                <div class="info">
+                  <h3>
+                      파리바게뜨
+                  </h3>
+                  <a href="/cafe/paris" class="button"> GO </a>
+                </div>
+              </div>
+              <div class="tdl">
+                <img src="/imgs/cafe/jeju" onerror="this.src='/imgs/errer/300x200'" class="image" width="300px" height="200px">
+                <div class="info">
+                  <h3>
+                      제주몰빵
+                  </h3>
+                  <a href="/cafe/jeju" class="button"> GO </a>
+                </div>
+              </div>
+        </div>
+{% endblock %}
