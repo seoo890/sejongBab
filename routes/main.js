@@ -1,7 +1,6 @@
 const express=require('express');
 const fs=require('fs');
 const router = express.Router();
-const path = require("path");
 
 router.get('/', function(req,res,next){
     res.render('index', {title:'학교에서 밥을먹자'});
