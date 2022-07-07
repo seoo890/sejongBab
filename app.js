@@ -3,7 +3,15 @@ const app=express();
 const router = require('./routes/index');
 const nunjucks = require('nunjucks');
 
+
+// const dotenv = require('dotenv');
+// const db_config = require(__dirname + '/config/database.js');
+// var conn = db_config.init();
+
+//db_config.connect(conn);
+
 app.set('view engine', 'html');
+app.set('ejs', 'ejs.renderFile');
 nunjucks.configure('views', {
   express: app,
   watch: true,
