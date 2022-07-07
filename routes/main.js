@@ -1,6 +1,9 @@
 const express=require('express');
-const fs=require('fs');
 const router = express.Router();
+
+const mysql = require('mysql2');
+const dbconfig   = require('../config/menuDB.js');
+const connection = mysql.createConnection(dbconfig);
 
 router.get('/', function(req,res,next){
     res.render('index', {title:'학교에서 밥을먹자'});
@@ -23,7 +26,11 @@ router.get('/store', function(req,res,next){
 });
 
 router.get('/haksik/hak', function(req,res,next){
-    res.render('shops/haksik/B1', {title:'학생회관'});
+    connection.query('SELECT * from food_lists where shop_id=1001', (error, rows) => {
+        if (error) throw error;
+        //console.log('post info is: ', rows);
+        res.render('shops/haksik/B1', {title:'학생회관', food_lists:rows});
+      });
 });
 
 router.get('/haksik/jin', function(req,res,next){

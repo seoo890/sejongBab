@@ -27,7 +27,7 @@
 
     .grid {
         width: 690px;
-        height: 300px;
+        height: 900px;
         margin-left: auto;
         margin-right: auto;
     }
@@ -119,9 +119,23 @@
                 <span>4500원</span>
             </div>
         </div>
-
+        {% for items in food_lists %}
+        <div class="tdl">
+            <img src="{{items.img_src}}" onerror="this.src='/imgs/errer/300x200'" class="image" width="200px" height="200px">
+            <div class="info">
+                <h4>
+                    {{items.name}}
+                </h4>
+                <span>{{items.price}}원</span>
+            {{items.desc}}
+            </div>
+        </div>
+        
+        {% endfor %}
+        
     </div>
 
+    
 
 {% endblock %}
 
