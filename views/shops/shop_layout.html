@@ -50,6 +50,9 @@
         font-size: 16px;
         color: #58595b;
     }
+    .menu_list{
+        margin-top: 5%;
+    }
 </style>
 {% endblock %}
 
@@ -87,18 +90,19 @@
         <div class="tdl">
             <img src="{{best.img_src}}" onerror="this.src='/imgs/errer/300x200'" class="image" width="200px" height="200px">
             <div class="info">
-                <h4>
+                <h4 style="font-size: 20px;">
                     {{best.name}}
                 </h4>
-                <span>{{best.price}}원</span>
-            <a onclick="show_menuinfo('{{best.img_src}}','{{best.name}}','{{best.price}}','{{best.desc}}')">상세보기</a>
+                <span style="font-size: 20px;">{{best.price}}원</span>
+                <br>
+            <a style="font-size: 16px;" onclick="show_menuinfo('{{best.img_src}}','{{best.name}}','{{best.price}}','{{best.desc}}')">상세보기</a>
             </div>
         </div>
         {% endfor %}  
     </div>
-    <br>
+    
     <div class="menu_list">
-        <p>메뉴</p>
+        <span>메뉴</span>
         {% for items in food_lists %}
         <div class="food_lists">
             <div class="list_preview" style="display: inline;">

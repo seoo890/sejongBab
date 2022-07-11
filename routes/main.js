@@ -7,6 +7,7 @@ const connection = mysql.createConnection(dbconfig);
 
 router.get('/', function(req,res,next){
     res.render('index', {title:'학교에서 밥을먹자'});
+    // connection.end();
 });
 
 router.get('/haksik', function(req,res,next){
@@ -26,19 +27,33 @@ router.get('/store', function(req,res,next){
 });
 
 router.get('/haksik/hak', function(req,res,next){
-    connection.query('SELECT * from food_lists where shop_id=1001', (error, rows) => {
+    var food_lists;
+    var querytext="SELECT * from food_lists where shop_id=1001;"+
+    "SELECT * from shop_lists where id=1001;"+
+    "SELECT * from food_lists where shop_id=1001 and isbest=1"
+    connection.query(querytext, (error, rows) => {
         if (error) throw error;
-        //console.log('post info is: ', rows);
-        res.render('shops/haksik/B1', {title:'학생회관', food_lists:rows});
-      });
+        res.render('shops/shop_layout', {title:'학생회관', food_lists:rows[0], shop_info:rows[1], best_menu:rows[2]});
+    });
 });
 
 router.get('/haksik/jin', function(req,res,next){
-    res.render('shops/haksik/jin', {title:'진관홀',notice:'가격인상이 있었습니다. 도리아가 맛있습니다.'});
+    var querytext="SELECT * from food_lists where shop_id=1002;"+
+    "SELECT * from shop_lists where id=1002;"+
+    "SELECT * from food_lists where shop_id=1002 and isbest=1"
+    connection.query(querytext, (error, rows) => {
+        if (error) throw error;
+        res.render('shops/shop_layout', {title:'진관홀', food_lists:rows[0], shop_info:rows[1], best_menu:rows[2]});
+    });
 });
-
 router.get('/restaurant/yamsem', function(req,res,next){
-    res.render('shops/restaurant/yamsem', {title:'얌샘김밥',notice:'공지가 없습니다.'});
+    var querytext="SELECT * from food_lists where shop_id=2001;"+
+    "SELECT * from shop_lists where id=2001;"+
+    "SELECT * from food_lists where shop_id=2001 and isbest=1"
+    connection.query(querytext, (error, rows) => {
+        if (error) throw error;
+        res.render('shops/shop_layout', {title:'얌샘김밥', food_lists:rows[0], shop_info:rows[1], best_menu:rows[2]});
+    });
 });
 
 router.get('/restaurant/saigong', function(req,res,next){

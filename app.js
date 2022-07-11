@@ -20,6 +20,11 @@ nunjucks.configure('views', {
 app.use(express.static(__dirname+'/'));
 
 app.use('/', router);
+app.get('/', function(req,res,next){
+  res.render('index', {title:'학교에서 밥을먹자'});
+  // connection.end();
+});
+
 
 const port = 3000;
 

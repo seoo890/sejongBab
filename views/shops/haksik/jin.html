@@ -2,10 +2,10 @@
 
 {% block style %}
 <style>
+    
     * {
         box-sizing: border-box;
         text-align: center;
-        font-family: "Jua";
     }
 
     body {
@@ -50,78 +50,71 @@
         font-size: 16px;
         color: #58595b;
     }
-    
 </style>
 {% endblock %}
 
 {% block content %}
-    <h1>진관홀 지하1층 학생식당</h1>
+    
+    <h1>{{shop_info[0].name}}</h1>
 
     <div>
-        숨겨진 학식맛집
+        {{shop_info[0].desc}}
     </div>
 
     <div style="text-align: center; margin-top: 20px;">
-        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d790.7944346168179!2d127.07274682699499!3d37.550876032783!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x357ca4d012339f67%3A0x10b9ea79991ca27f!2z7ISc7Jq47Yq567OE7IucIOq1sOyekOuPmSDshLjsooXrjIDtlZnqtZAg7KeE6rSA7ZmA!5e0!3m2!1sko!2skr!4v1654507602318!5m2!1sko!2skr" width="400" height="250" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+        <iframe src="{{shop_info[0].location}}" width="70%" height="250px" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
     </div>
 
     <p>
-        - 위치 : 진관홀 지하 1층
+        - 위치 : {{shop_info[0].location_desc}}
     </p>
 
     <p>-영업시간 : <br> 
-        평일 : 09:30~15:30 <br>
-        (주말, 공휴일 휴무)
+        {{shop_info[0].opening_hour}}
     </p>
     <div>
         알림, 공지
         <div class="notice">
-            {{notice}}
+            {{shop_info[0].notice}}
         </div>
     </div>
-
     <h3>
         <대표 음식>
     </h3>
 
     <div class="grid">
+        {% for best in best_menu %}
         <div class="tdl">
-            <img src="/imgs/haksik/jin/1" onerror="this.src='/imgs/errer/300x200'" class="image" width="200px" height="200px">
+            <img src="{{best.img_src}}" onerror="this.src='/imgs/errer/300x200'" class="image" width="200px" height="200px">
             <div class="info">
                 <h4>
-                    크림치즈도리아
+                    {{best.name}}
                 </h4>
-                <span>5000원</span>
+                <span>{{best.price}}원</span>
+            <a onclick="show_menuinfo('{{best.img_src}}','{{best.name}}','{{best.price}}','{{best.desc}}')">상세보기</a>
             </div>
         </div>
-
-        <div class="tdl">
-            <img src="/imgs/haksik/jin/2" onerror="this.src='/imgs/errer/300x200'" class="image" width="200px" height="200px">
-            <div class="info">
-                <h4>
-                    순쫄
-                </h4>
-                <span>4500원</span>
-            </div>
-        </div>
-
-        <div class="tdl">
-            <img src="/imgs/haksik/jin/3" onerror="this.src='/imgs/errer/300x200'" class="image" width="200px" height="200px">
-            <div class="info">
-                <h4>
-                    김치찌게라면
-                </h4>
-                <span>3000원</span>
-            </div>
-        </div>
-
+        {% endfor %}  
     </div>
-
+    <br>
+    <div class="menu_list">
+        <p>메뉴</p>
+        {% for items in food_lists %}
+        <div class="food_lists">
+            <div class="list_preview" style="display: inline;">
+                <span>{{items.name}}</span>
+                <span>{{items.price}}원</span>
+                <a onclick="show_menuinfo('{{items.img_src}}','{{items.name}}','{{items.price}}','{{items.desc}}')">상세보기</a>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+    
 
 {% endblock %}
 
 {% block script %}
-<script src="">
+<script>
     
 </script>
 {% endblock %}

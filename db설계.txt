@@ -3,12 +3,14 @@ menu[database]
     shop_lists[table]
 
 food_lists[table]
-id - 해당 메뉴 고유 아이디값(int) - 고유값 auto_increment
-shop_id - 해당 메뉴를 판매하는 매장의 id(int)
-name - 해당 메뉴 이름(string)
-price - 해당 메뉴 가격(int)
-img_src - 해당 메뉴의 이미지 링크(string)
-desc - 해당 메뉴 서술(string)
+    id - 해당 메뉴 고유 아이디값(int) - 고유값 auto_increment
+    shop_id - 해당 메뉴를 판매하는 매장의 id(int)
+    food_type - 메뉴의 타입
+        0-기타(미분류), 1-밥류, 2-찌게류, 3-면류, 4-육류, 5-해산물류 등
+    name - 해당 메뉴 이름(string)
+    price - 해당 메뉴 가격(int)
+    img_src - 해당 메뉴의 이미지 링크(string)
+    desc - 해당 메뉴 서술(string)
 
 shop_lists[table]
     id - 해당 식당 고유 아이디값(int) - 고유값
@@ -16,7 +18,9 @@ shop_lists[table]
         N - 분류(1-학식, 2-식당, 3-카페, 4-편의점)
         nnn - 번호(001~999) [ex)1001 - 학생회관, 4002-이마트24]
     name - 식당 이름
+    img_src - 식당 이미지 링크
     location - 식당 위치 주소
     notice - 공지
 
 기타 추가예정
+
