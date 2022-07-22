@@ -2,7 +2,7 @@ const express = require('express');
 const app=express();
 const router = require('./routes/index');
 const nunjucks = require('nunjucks');
-
+const bodyParser= require('body-parser')
 
 // const dotenv = require('dotenv');
 // const db_config = require(__dirname + '/config/database.js');
@@ -18,13 +18,8 @@ nunjucks.configure('views', {
 });
 
 app.use(express.static(__dirname+'/'));
-
+app.use(bodyParser.urlencoded ({extended: true}))
 app.use('/', router);
-app.get('/', function(req,res,next){
-  res.render('index', {title:'학교에서 밥을먹자'});
-  // connection.end();
-});
-
 
 const port = 3000;
 

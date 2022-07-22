@@ -1,0 +1,14 @@
+<script>
+    window.onload=function(){
+        if('{{alert_type}}'==1)//리뷰 삭제 실패
+        {
+            alert('리뷰 삭제에 실패하였습니다.');
+            location.replace('/main/redirect/{{food_id}}');
+        }
+        else if('{{alert_type}}'==2)//리뷰 전송 성공
+        {
+            alert('저장되었습니다. 관리자 검수 후 등록될 예정입니다.');
+            location.replace('/main/redirect/{{food_id}}');
+        }
+    }
+</script>

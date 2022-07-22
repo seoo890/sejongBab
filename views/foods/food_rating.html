@@ -1,0 +1,40 @@
+{% extends 'layout.html' %}
+
+{% block style %}
+<style>
+    @font-face {
+        src: url("../fonts/BMJUA_otf.otf");
+        font-family: "Jua";
+    }
+    * {
+        box-sizing: border-box;
+        text-align: center;
+        font-family: "Jua";
+    }
+    
+</style>
+{% endblock %}
+
+{% block content %}
+<script>
+    window.onload=function(){
+        document.title="{{food_info.name}}";
+        document.getElementsByName('food_id')[0].value='{{food_info.id}}';
+    }
+</script>
+    <form action="/main/createrate" method="POST">
+        <input type="number" name="food_id" value="" style="display:none;">
+        <input type="text" name="author" placeholder="작성자(공백 시 익명으로 작성)">
+        <input type="number" placeholder="rate(0.0~10.0)" name="rate">
+        <textarea name="content" cols="40" rows="10" placeholder="내용"></textarea>
+        <input type="text" placeholder="pw(~10)" name="pw">
+        <button type="submit">Submit</button>
+    </form>
+    <a href="javascript:history.back()">뒤로가기</a>
+{% endblock %}
+
+{% block script %}
+<script src="">
+    
+</script>
+{% endblock %}

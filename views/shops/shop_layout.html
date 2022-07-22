@@ -23,7 +23,7 @@
 
     .grid {
         width: 690px;
-        height: 300px;
+        height: 350px;
         margin-left: auto;
         margin-right: auto;
     }
@@ -95,7 +95,7 @@
                 </h4>
                 <span style="font-size: 20px;">{{best.price}}원</span>
                 <br>
-            <a style="font-size: 16px;" onclick="show_menuinfo('{{best.img_src}}','{{best.name}}','{{best.price}}','{{best.desc}}')">상세보기</a>
+            <a style="font-size: 16px;" onclick="show_menuinfo('{{best.id}}','{{best.img_src}}','{{best.name}}','{{best.price}}','{{best.desc}}')">상세보기</a>
             </div>
         </div>
         {% endfor %}  
@@ -108,7 +108,7 @@
             <div class="list_preview" style="display: inline;">
                 <span>{{items.name}}</span>
                 <span>{{items.price}}원</span>
-                <a onclick="show_menuinfo('{{items.img_src}}','{{items.name}}','{{items.price}}','{{items.desc}}')">상세보기</a>
+                <a onclick="show_menuinfo('{{items.id}}','{{items.img_src}}','{{items.name}}','{{items.price}}','{{items.desc}}')">상세보기</a>
             </div>
         </div>
         {% endfor %}

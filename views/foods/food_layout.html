@@ -1,0 +1,109 @@
+{% extends 'layout.html' %}
+
+{% block style %}
+<style>
+    
+    * {
+        box-sizing: border-box;
+        text-align: center;
+    }
+
+    body {
+       background-color: #F0E8D9;
+    }
+
+    .notice {
+        border-radius: 10px;
+        background-color: white; 
+        width: 600px; 
+        height: 50px;
+        line-height: 50px;
+        margin: 20px auto;
+    }
+
+    .grid {
+        width: 690px;
+        height: 300px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .tdl {
+        border-radius: 10px;
+        background-color: white; 
+        width: 200px; 
+        margin: 0 auto;
+        margin-bottom: 50px;
+        overflow: hidden;
+        float: left;
+        margin-right: 15px;
+        margin-left: 15px;
+    }
+
+    .info {
+        padding: 5px;
+    }
+
+    h4 {
+        margin-top: 0px;
+        margin-bottom: 20px;
+        font-size: 16px;
+        color: #58595b;
+    }
+    .review_list{
+        margin-top: 5%;
+    }
+</style>
+{% endblock %}
+
+{% block content %}
+    <script>
+        window.onload=function(){
+            document.title="{{food_info[0].name}}";
+        }
+    </script>
+    <h1>{{food_info[0].name}}</h1>
+
+    <img src="{{food_info[0].img_src}}" onerror="this.src='/imgs/errer/300x200'" class="image" width="200px" height="200px">
+
+    <div>
+        {{food_info[0].desc}}
+    </div>
+    
+    <div>
+        <a href="{{food_info[0].id}}/rating">리뷰 작성하기</a>
+    </div>
+
+    <div class="review_list">
+        <span>리뷰</span>
+        {% for ratings in food_rates %}
+        <div class="food_lists">
+            <div class="list_preview" style="display: inline;">
+                <span>작성자 : {{ratings.author}}</span><br>
+                <span>평점 : {{ratings.rate}}</span><br>
+                <span>{{ratings.content}}</span>
+                <span><button onclick="delete_rate('{{ratings.id}}')">리뷰 지우기</button></span>
+            </div>
+        </div>
+        <br>
+        {% endfor %}
+    </div>
+    <br>
+    <a href="javascript:history.back()">뒤로가기</a>
+
+{% endblock %}
+
+{% block script %}
+<script>
+    function delete_rate(rating_id)
+    {
+        var input=confirm('정말 리뷰를 삭제하시겠습니까?');
+        if(input)
+        {
+            var input_pw=prompt('삭제 비밀번호를 입력하시오');
+            location.replace('/main/check/'+rating_id+'/'+input_pw);
+        }
+
+    }
+</script>
+{% endblock %}

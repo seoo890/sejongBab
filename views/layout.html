@@ -203,13 +203,14 @@
                 object.className+=' on';
             }
 
-            function show_menuinfo(img_src,name,price,desc){
+            function show_menuinfo(food_id,img_src,name,price,desc){
                 document.getElementById('food_img').src=img_src;
                 document.getElementById('food_name').innerHTML=name;
                 document.getElementById('food_price').innerHTML=price;
                 document.getElementById('food_desc').innerHTML=desc;
                 document.getElementById('menu_info').style.display='block';
                 document.getElementById('overlay').style.display='block';
+                document.getElementById('food_info_page').setAttribute('onclick','location.href="/main/food/'+food_id+'"');
             }
             function hide_menuinfo(){
                 document.getElementById('menu_info').style.display='none';
@@ -226,7 +227,8 @@
             <h3 id="food_name">이름</h3>
             <p id="food_price">가격</p>
             <p id="food_desc">설명</p>
-            <button onclick="hide_menuinfo()">test</button>
+            <button onclick="hide_menuinfo()">닫기</button>
+            <button id="food_info_page" onclick="">상세정보</button>
         </div>
         <!--메뉴 상세설명창 분리-->
         <div id="overlay"></div>

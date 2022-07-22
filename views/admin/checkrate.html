@@ -1,0 +1,58 @@
+<script>
+    function apply(rate_id,food_id,author,rate,content,pw)
+    {
+        var confirmflag = confirm("정말 등록하시겠습니까?");
+        if(confirmflag){
+            document.getElementById('form_id').setAttribute('action','/admin/applyrate');
+            document.getElementsByName('rate_id')[0].value=rate_id;
+            document.getElementsByName('food_id')[0].value=food_id;
+            document.getElementsByName('rate')[0].value=rate;
+            document.getElementsByName('author')[0].value=author;
+            document.getElementsByName('content')[0].value=content;
+            document.getElementsByName('pw')[0].value=pw;
+            document.getElementById('form_id').submit();
+        }
+    }
+    function delete_rate(rate_id)
+    {
+        var confirmflag = confirm("정말 삭제하시겠습니까?");
+        if(confirmflag){
+            location.replace('/admin/deleterate/'+rate_id);
+        }
+    }
+</script>
+
+<form action="/admin/applyrate" method="POST" id="form_id" style="display:none;">
+    <input name="rate_id">
+    <input  name="food_id">
+    <input  name="author">
+    <input  name="rate">
+    <textarea name="content" cols="40" rows="10" placeholder="내용"></textarea>
+    <input   name="pw">
+    <button id="submit_btn" type="submit">Submit</button>
+</form>
+
+
+
+<table border="2">
+    <tr>
+      <th>id</th>
+      <th>이름</th>
+      <th>작성자</th>
+      <th>점수</th>
+      <th>내용</th>
+      <th>검수</th>
+    </tr>
+    {% for items in rates %}
+    <tr>
+      <td>{{items.id}}</td>
+      <td>{{items.food_id}}</td>
+      <td>{{items.author}}</td>
+      <td>{{items.rate}}</td>
+      <td>{{items.content}}</td>
+      <td><button onclick=
+        "apply('{{items.id}}','{{items.food_id}}','{{items.author}}','{{items.rate}}','{{items.content}}','{{items.pw}}')">
+        등록</button><button onclick="delete_rate('{{items.id}}')">삭제</button></td>
+    </tr>
+    {% endfor %}
+</table>
