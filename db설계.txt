@@ -1,26 +1,48 @@
 menu[database]
     food_lists[table]
     shop_lists[table]
+    food_rate[table]
+    food_rate_draft[table]
 
 food_lists[table]
     id - 해당 메뉴 고유 아이디값(int) - 고유값 auto_increment
     shop_id - 해당 메뉴를 판매하는 매장의 id(int)
-    food_type - 메뉴의 타입
+    food_type - 메뉴의 타입(int)
         0-기타(미분류), 1-밥류, 2-찌게류, 3-면류, 4-육류, 5-해산물류 등
     name - 해당 메뉴 이름(string)
     price - 해당 메뉴 가격(int)
     img_src - 해당 메뉴의 이미지 링크(string)
     desc - 해당 메뉴 서술(string)
+    isbest - 0,1로 나뉘는 값으로, 1이면 페이지 추천메뉴에 이미지랑 같이 랜더링(int)
 
 shop_lists[table]
     id - 해당 식당 고유 아이디값(int) - 고유값
         Nnnn
         N - 분류(1-학식, 2-식당, 3-카페, 4-편의점)
         nnn - 번호(001~999) [ex)1001 - 학생회관, 4002-이마트24]
-    name - 식당 이름
-    img_src - 식당 이미지 링크
-    location - 식당 위치 주소
-    notice - 공지
+    name - 식당 이름(varchar(45))
+    img_src - 식당 이미지 링크(varchar(1000))
+    location - 식당 위치 주소(varchar(1000))
+    notice - 공지(varchar(400))
+    opening_hour - 영업시간(varchar(200))
+    desc - 해당 매장 설명(varchar(200))
+    location_desc - 해당 매장 위치 설명(varchar(100))
+
+food_rate[table]
+    id - 해당 리뷰 고유 아이디값(int) - 고유값 auto_increment
+    food_id - 해당 리뷰의 대상 음식 코드(int)
+    author - 작성자(varchar(90))
+    rate - 평점(int(0~10))
+    content - 리뷰 내용(varchar(1000))
+    pw - 리뷰 삭제용 비밀번호 10자리까지(varchar(10))
+
+food_rate_draft[table] - 리뷰 검수용 table
+    id - 해당 리뷰 고유 아이디값(int) - 고유값 auto_increment
+    food_id - 해당 리뷰의 대상 음식 코드(int)
+    author - 작성자(varchar(90))
+    rate - 평점(int(0~10))
+    content - 리뷰 내용(varchar(1000))
+    pw - 리뷰 삭제용 비밀번호 10자리까지(varchar(10))
 
 기타 추가예정
 
