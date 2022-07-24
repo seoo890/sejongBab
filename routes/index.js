@@ -3,7 +3,7 @@ const router = express.Router();
 
 const indexrouter = require('./main.js');
 const imgrouter = require('./img.js');
-const dbrouter = require('./db.js');
+//const dbrouter = require('./db.js');
 const adminrouter = require('./admin.js');
 
 router.get('/', function(req,res,next){
@@ -12,7 +12,7 @@ router.get('/', function(req,res,next){
 
 router.use('/main', indexrouter);
 router.use('/imgs', imgrouter);
-router.use('/DBTEST', dbrouter);
+//router.use('/DBTEST', dbrouter);
 router.use('/admin', adminrouter);
 
 module.exports = router;

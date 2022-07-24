@@ -4,8 +4,8 @@ const router = express.Router();
 const mysql = require('mysql2');
 const menuDBconfig   = require('../config/menuDB.js');
 const menuConnection = mysql.createConnection(menuDBconfig);
-const postDBconfig   = require('../config/postsDB.js');
-const postConnection = mysql.createConnection(postDBconfig);
+//const postDBconfig   = require('../config/postsDB.js');
+//const postConnection = mysql.createConnection(postDBconfig);
 
 router.get('/', function(req,res,next){
     res.render('index', {title:'학교에서 밥을먹자'});
